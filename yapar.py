@@ -1,6 +1,6 @@
 from LR import canonical_collection
 from LL import first_sets,follow_sets
-from draw import visualize_lr0
+from automata import visualize_lr0
 import re
 
 

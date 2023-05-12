@@ -9,7 +9,7 @@ CYELLOW = '\33[93m'
 CGREEM = '\33[92m'
 CBLUE = '\33[94m'
 
-with open('yalex/lex2.yal', 'r') as f:
+with open('lex2.yal', 'r') as f:
     # Leer todas las líneas del archivo
     yalex_content = f.read()
 
@@ -29,7 +29,7 @@ file_content = replace_quotation_mark(file_content)
 regex,errorStack,fin = build_regex(file_content,i)
 LEXtokens,errorStack = build_tokens(file_content, regex,errorStack,fin+1)
 
-tokens, productions_dict,errorStack = parse_yalp_file('yapar/lex2.yalp',errorStack)
+tokens, productions_dict,errorStack = parse_yalp_file('lex2.yalp',errorStack)
 if errorStack:
     print(CRED,"error en el stack\n")
     for error in errorStack:
