@@ -1,13 +1,5 @@
-
 from yapar import *
 from yalex import *
-
-
-CEND = '\33[0m'
-CRED = '\33[91m'
-CYELLOW = '\33[93m'
-CGREEM = '\33[92m'
-CBLUE = '\33[94m'
 
 with open('lex2.yal', 'r') as f:
     # Leer todas las líneas del archivo
@@ -31,10 +23,9 @@ LEXtokens,errorStack = build_tokens(file_content, regex,errorStack,fin+1)
 
 tokens, productions_dict,errorStack = parse_yalp_file('lex2.yalp',errorStack)
 if errorStack:
-    print(CRED,"error en el stack\n")
+    print("error en el stack\n")
     for error in errorStack:
         print(error)
-    print(CEND)
     exit()
 
 gooTokens = []
@@ -52,10 +43,9 @@ if len(gooTokens) < len(LEXtokens):
 
 
 if errorStack:
-    print(CRED,"error en el stack\n")
+    print("error en el stack\n")
     for error in errorStack:
         print(error)
-    print(CEND)
     exit()
 
 converted_productions = convert_productions(productions_dict)
