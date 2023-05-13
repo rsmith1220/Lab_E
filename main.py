@@ -58,8 +58,8 @@ def print_first_and_follow_sets(productions_dict):
         print(f"{non_terminal}: {follow_set}")
 
 # Main program
-lex_filename = 'lex1.yal'
-lexp_filename = 'lex1.yalp'
+lex_filename = 'lex2.yal'
+lexp_filename = 'lex2.yalp'
 
 yalex_content = read_yalex_content(lex_filename)
 simple_pattern, compound_pattern, simple_regex_pattern = extract_regex_patterns()
