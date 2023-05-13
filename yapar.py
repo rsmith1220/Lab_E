@@ -15,7 +15,7 @@ def split_sections(content):
     productions_section = None
     sections = content.split('%%')
     if len(sections)!= 2:
-        errorStack.append("Error: No se encuentra la división '%%' entre las secciones de tokens y producciones.")
+        errorStack.append("Error: '%%' no esta en el archivo")
     else:
         tokens_section = sections[0]
         productions_section = sections[1]
@@ -74,7 +74,7 @@ def validate_yalp(tokens_section, productions_section, tokens, productions):
 
     # Check if '%%' division exists
     if not tokens_section or not productions_section:
-        error_stack.append("Error: The '%%' division between tokens and productions sections is missing.")
+        error_stack.append("Error: '%%' no esta en el archivo")
 
     # Check if '%' symbol is present before token declaration
     lines = tokens_section.split('\n')
